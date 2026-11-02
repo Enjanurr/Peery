@@ -1,0 +1,39 @@
+PEERY — MASTER STATUS LOG
+========================
+
+Project Name: Peery — Peer Evaluation & Team Assessment Platform
+Date: 2026-11-01
+Overall Status: Phase 1 is complete. Phase 2 and subsequent phases are pending / in progress.
+
+COMPLETED TASKS
+---------------
+[x] Phase 1: Auth & roles
+    Authentication and role-based access work is complete and verified via Postman testing.
+
+PENDING / IN-PROGRESS TASKS
+---------------------------
+[ ] Phase 2: Projects & teams
+    Project and team management configuration and UI wiring.
+
+[ ] Phase 3: Epic 3 — Confidential Peer Evaluation Engine (current feature)
+    [ ] 3.1 Pending Evaluation Tracker & Teammate Selector
+    [ ] 3.2 Rubric Rating & Qualitative Feedback Submission
+    [ ] 3.3 Pre-Deadline Editing & Anonymity Protection
+    The README's milestone checklist is also still unchecked:
+    pending-status/progress retrieval, end-to-end create/update validation,
+    live API wiring for the evaluation UI, and anonymity verification.
+
+[ ] Phase 4: Score aggregation + StudentResultSummaryDTO
+    Build anonymized student result summaries and score aggregation.
+
+[ ] Phase 5: Instructor view, rater attribution, and grade overrides
+    Add instructor attribution and grade overrides requiring a mandatory
+    reason.
+
+TESTING STATUS
+--------------
+- Backend authentication Postman endpoints TC1–TC8: verified.
+- Core Spring Boot configurations: verified.
+- Phase 2 through Phase 5-specific test checklists in the README: remain unchecked.
+
+Source of roadmap status: README.md, Section 14 (Roadmap).
