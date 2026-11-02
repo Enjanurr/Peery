@@ -5,7 +5,7 @@ import com.peery.app.dto.LoginRequest;
 import com.peery.app.dto.RegisterRequest;
 import com.peery.app.dto.UserResponse;
 import com.peery.app.entity.RoleEntity;
-import com.peery.app.entity.User;
+import com.peery.app.entity.UserEntity;
 import com.peery.app.exception.ApiException;
 import com.peery.app.repository.UserRepository;
 import com.peery.app.security.JwtTokenProvider;
@@ -58,7 +58,7 @@ public class AuthService {
             throw emailTaken();
         }
 
-        User user = new User(
+        UserEntity user = new UserEntity(
                 email,
                 passwordEncoder.encode(request.password()),
                 request.fullName().trim(),
@@ -82,13 +82,13 @@ public class AuthService {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(email, request.password()));
 
-        User user = userRepository.findByEmail(email)
+        UserEntity user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new BadCredentialsException("Invalid credentials"));
 
         return buildResponse(user);
     }
 
-    private AuthResponse buildResponse(User user) {
+    private AuthResponse buildResponse(UserEntity user) {
         String token = tokenProvider.generateToken(user.getEmail(), user.getRole());
         return new AuthResponse(token, "Bearer", tokenProvider.getExpirationSeconds(), UserResponse.from(user));
     }

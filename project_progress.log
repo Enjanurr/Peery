@@ -37,3 +37,47 @@ TESTING STATUS
 - Phase 2 through Phase 5-specific test checklists in the README: remain unchecked.
 
 Source of roadmap status: README.md, Section 14 (Roadmap).
+
+
+PROGRESS UPDATE — 2026-11-02 11:25 (+08:00)
+==========================================
+[SUCCESS] Phase 2 — Projects & Teams implementation review
+
+Implemented surfaces found in the workspace:
+- Backend instructor project endpoints:
+  GET/POST /api/instructor/projects
+  GET/PUT/DELETE /api/instructor/projects/{projectId}
+  GET /api/instructor/students
+- Backend team and membership endpoints:
+  POST/DELETE /api/instructor/projects/{projectId}/teams
+  POST /api/instructor/projects/{projectId}/teams/{teamId}/members
+  DELETE /api/instructor/projects/{projectId}/teams/{teamId}/members/{studentId}
+- Backend student project endpoint:
+  GET /api/student/projects
+- Frontend project/team API integration and project/team UI are present.
+- Phase 2 frontend API integration test is present; its live execution is
+  still pending.
+
+Verification:
+- [x] Frontend production build (`npm run build`) passed.
+- [x] Backend test suite (`mvnw.cmd test`) passed: 5 tests, 0 failures/errors
+      (JwtTokenProviderTest).
+- [ ] Run the Phase 2 live frontend API integration suite against the backend.
+
+PHASE CHECKLIST / NEXT ACTION
+-----------------------------
+- [x] Project CRUD API and instructor project views are implemented.
+- [x] Team creation/deletion and student assignment/removal APIs are implemented.
+- [x] Student project/team listing API and frontend integration are implemented.
+- [ ] Run the Phase 2 live integration test with the test invite code and a
+      running backend; then reconcile README.md Section 14 before marking
+      Phase 2 complete.
+
+Estimated overall roadmap progress: 40% (Phase 1 complete and Phase 2
+implementation present out of five roadmap phases). Phase 2 is not signed off
+until its live integration verification is completed. README.md Section 14
+currently marks only Phase 1 complete; it was not changed in this update.
+
+Code safety: no source code, application files, or README checklists were
+modified for this update. This entry records existing implementation and
+verification evidence only.

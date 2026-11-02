@@ -14,7 +14,7 @@ import java.time.Instant;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,11 +36,11 @@ public class User {
     @Column(name = "created_at", nullable = false, updatable = false)
     private Instant createdAt;
 
-    protected User() {
+    protected UserEntity() {
         // required by JPA
     }
 
-    public User(String email, String passwordHash, String fullName, RoleEntity role) {
+    public UserEntity(String email, String passwordHash, String fullName, RoleEntity role) {
         this.email = email;
         this.passwordHash = passwordHash;
         this.fullName = fullName;
