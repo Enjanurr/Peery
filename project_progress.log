@@ -1,83 +1,76 @@
-PEERY — MASTER STATUS LOG
-========================
+PEERY — CURRENT MASTER PROGRESS LOG
+===================================
 
-Project Name: Peery — Peer Evaluation & Team Assessment Platform
-Date: 2026-11-01
-Overall Status: Phase 1 is complete. Phase 2 and subsequent phases are pending / in progress.
+Project: Peery — Peer Evaluation & Team Assessment Platform
+Updated: 2026-11-04 20:34 (+08:00)
+Overall accomplishment: approximately 50%
+Status: Phase 1 is complete. Phase 2 implementation is present, and Phase 3
+backend/frontend implementation is underway. Live integration verification
+remains outstanding; Phases 4 and 5 have not started.
 
-COMPLETED TASKS
----------------
-[x] Phase 1: Auth & roles
-    Authentication and role-based access work is complete and verified via Postman testing.
+PERCENTAGE BASIS
+----------------
+Estimated equally weighted progress across the five roadmap phases:
+- Phase 1: 100% — marked complete; authentication test coverage was previously
+  recorded as Postman endpoints TC1–TC8.
+- Phase 2: 80% — project/team backend and frontend flows are present and builds
+  pass; live Phase 2 integration verification remains pending.
+- Phase 3: 70% — primary evaluation backend endpoints and student UI/API flows
+  are present; live integration verification and milestone sign-off remain.
+- Phase 4: 0% — not started.
+- Phase 5: 0% — not started.
 
-PENDING / IN-PROGRESS TASKS
----------------------------
-[ ] Phase 2: Projects & teams
-    Project and team management configuration and UI wiring.
+Average: (100% + 80% + 70% + 0% + 0%) / 5 = 50%.
+This is an implementation-progress estimate, not a claim that the README
+roadmap has been signed off; its current checkbox state is recorded below.
 
-[ ] Phase 3: Epic 3 — Confidential Peer Evaluation Engine (current feature)
-    [ ] 3.1 Pending Evaluation Tracker & Teammate Selector
-    [ ] 3.2 Rubric Rating & Qualitative Feedback Submission
-    [ ] 3.3 Pre-Deadline Editing & Anonymity Protection
-    The README's milestone checklist is also still unchecked:
-    pending-status/progress retrieval, end-to-end create/update validation,
-    live API wiring for the evaluation UI, and anonymity verification.
-
-[ ] Phase 4: Score aggregation + StudentResultSummaryDTO
-    Build anonymized student result summaries and score aggregation.
-
-[ ] Phase 5: Instructor view, rater attribution, and grade overrides
-    Add instructor attribution and grade overrides requiring a mandatory
-    reason.
-
-TESTING STATUS
---------------
-- Backend authentication Postman endpoints TC1–TC8: verified.
-- Core Spring Boot configurations: verified.
-- Phase 2 through Phase 5-specific test checklists in the README: remain unchecked.
-
-Source of roadmap status: README.md, Section 14 (Roadmap).
-
-
-PROGRESS UPDATE — 2026-11-02 11:25 (+08:00)
-==========================================
-[SUCCESS] Phase 2 — Projects & Teams implementation review
-
-Implemented surfaces found in the workspace:
-- Backend instructor project endpoints:
-  GET/POST /api/instructor/projects
-  GET/PUT/DELETE /api/instructor/projects/{projectId}
-  GET /api/instructor/students
-- Backend team and membership endpoints:
-  POST/DELETE /api/instructor/projects/{projectId}/teams
-  POST /api/instructor/projects/{projectId}/teams/{teamId}/members
-  DELETE /api/instructor/projects/{projectId}/teams/{teamId}/members/{studentId}
-- Backend student project endpoint:
-  GET /api/student/projects
-- Frontend project/team API integration and project/team UI are present.
-- Phase 2 frontend API integration test is present; its live execution is
-  still pending.
-
-Verification:
+COMPLETED / VERIFIED THIS UPDATE
+-------------------------------
 - [x] Frontend production build (`npm run build`) passed.
-- [x] Backend test suite (`mvnw.cmd test`) passed: 5 tests, 0 failures/errors
-      (JwtTokenProviderTest).
-- [ ] Run the Phase 2 live frontend API integration suite against the backend.
+- [x] Backend test suite (`mvnw.cmd test`) passed: 5 tests, 0 failures,
+      0 errors, 0 skipped. The available test was JwtTokenProviderTest.
+- [x] Confirmed Phase 3 evaluation endpoint, service, migration, frontend API,
+      pages, and student-only routes are present in the workspace.
 
-PHASE CHECKLIST / NEXT ACTION
------------------------------
-- [x] Project CRUD API and instructor project views are implemented.
-- [x] Team creation/deletion and student assignment/removal APIs are implemented.
-- [x] Student project/team listing API and frontend integration are implemented.
-- [ ] Run the Phase 2 live integration test with the test invite code and a
-      running backend; then reconcile README.md Section 14 before marking
-      Phase 2 complete.
+IMPLEMENTATION STATUS
+---------------------
+Phase 1 — Auth & roles
+- [x] Complete per README Section 14.
+- Previously recorded authentication checks: Postman endpoints TC1–TC8.
 
-Estimated overall roadmap progress: 40% (Phase 1 complete and Phase 2
-implementation present out of five roadmap phases). Phase 2 is not signed off
-until its live integration verification is completed. README.md Section 14
-currently marks only Phase 1 complete; it was not changed in this update.
+Phase 2 — Projects & teams
+- [x] Instructor project CRUD and student roster backend endpoints are present.
+- [x] Team creation/deletion and member add/remove endpoints are present.
+- [x] Student project listing and frontend project/team screens and API are
+      present.
+- [ ] Run the Phase 2 live frontend API integration test against a configured,
+      running backend.
+- README Section 14 currently has `[]` for Phase 2 (unchecked).
 
-Code safety: no source code, application files, or README checklists were
-modified for this update. This entry records existing implementation and
-verification evidence only.
+Phase 3 — Confidential Peer Evaluation Engine
+- [x] Core evaluation backend endpoint and service implementations are present:
+      window, criteria, pending list, own evaluations, get, create, and update.
+- [x] Core student frontend/API implementation is present: evaluation queue,
+      teammate form, rubric inputs, deadline state, and student-only routes.
+- [x] V3 evaluation schema migration is present.
+- [ ] Run the Phase 3 live API integration test and verify end-to-end outcomes.
+- [ ] Complete and sign off the README milestone and test checklists, including
+      validation, deadlines, duplicate handling, authorization, and anonymity.
+- README Section 14 and all five Nov 5 milestone boxes remain unchecked.
+
+Phases 4 and 5
+- [ ] Phase 4: Score aggregation and anonymized StudentResultSummaryDTO.
+- [ ] Phase 5: Instructor attribution view and reason-required grade overrides.
+
+NEXT READY ACTION
+-----------------
+Run the Phase 3 live frontend API integration suite with a configured test
+invite code and a running backend; it covers the key evaluation flows,
+validation cases, stale versions, access controls, anonymity, and deadline
+locking. Then record the result and update the applicable checklist status.
+
+SCOPE / SAFETY
+--------------
+Only this log was replaced for this update. No application source code or
+README content was modified. Current roadmap checkbox state is based on
+README.md Section 14; implementation status above is based on workspace files.
