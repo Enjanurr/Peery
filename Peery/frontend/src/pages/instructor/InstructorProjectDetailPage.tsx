@@ -1,4 +1,4 @@
-import { ArrowLeft, Pencil, Trash2 } from 'lucide-react';
+import { ArrowLeft, ListChecks, Pencil, Trash2 } from 'lucide-react';
 import { useState, type FormEvent } from 'react';
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import {
@@ -150,7 +150,14 @@ export default function InstructorProjectDetailPage() {
                   {formatDateTime(project.evalEndDate)}
                 </p>
               </div>
-              <div className="flex shrink-0 gap-1">
+              <div className="flex shrink-0 flex-wrap justify-end gap-1">
+                <Link
+                  to={`/instructor/projects/${id}/results`}
+                  className="flex items-center gap-1 rounded-lg bg-slate-700 px-3 py-1.5 text-sm hover:bg-slate-600"
+                >
+                  <ListChecks className="h-4 w-4" />
+                  Results
+                </Link>
                 <button
                   onClick={() => setEditing(true)}
                   disabled={busy}

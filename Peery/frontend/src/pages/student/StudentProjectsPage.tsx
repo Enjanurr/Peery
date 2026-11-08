@@ -50,12 +50,20 @@ export default function StudentProjectsPage() {
                         ))}
                       </ul>
                     )}
-                    <Link
-                      to={`/student/projects/${project.id}/evaluations`}
-                      className="mt-3 inline-block rounded-lg bg-indigo-600 px-3 py-1.5 text-sm font-medium hover:bg-indigo-500"
-                    >
-                      Evaluate teammates
-                    </Link>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <Link
+                        to={`/student/projects/${project.id}/evaluations`}
+                        className="rounded-lg bg-indigo-600 px-3 py-1.5 text-sm font-medium hover:bg-indigo-500"
+                      >
+                        Evaluate teammates
+                      </Link>
+                      <Link
+                        to={`/student/projects/${project.id}/results`}
+                        className="rounded-lg bg-slate-700 px-3 py-1.5 text-sm font-medium hover:bg-slate-600"
+                      >
+                        View results
+                      </Link>
+                    </div>
                   </div>
                 ) : (
                   <p className="text-slate-400">You have not been assigned to a team yet.</p>

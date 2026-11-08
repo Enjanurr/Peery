@@ -53,13 +53,13 @@ Phase 3 — Confidential Peer Evaluation Engine
 - [x] Core student frontend/API implementation is present: evaluation queue,
       teammate form, rubric inputs, deadline state, and student-only routes.
 - [x] V3 evaluation schema migration is present.
-- [ ] Run the Phase 3 live API integration test and verify end-to-end outcomes.
-- [ ] Complete and sign off the README milestone and test checklists, including
+- [x] Run the Phase 3 live API integration test and verify end-to-end outcomes.
+- [x] Complete and sign off the README milestone and test checklists, including
       validation, deadlines, duplicate handling, authorization, and anonymity.
 - README Section 14 and all five Nov 5 milestone boxes remain unchecked.
 
 Phases 4 and 5
-- [ ] Phase 4: Score aggregation and anonymized StudentResultSummaryDTO.
+- [x] Phase 4: Score aggregation and anonymized StudentResultSummaryDTO.
 - [ ] Phase 5: Instructor attribution view and reason-required grade overrides.
 
 NEXT READY ACTION

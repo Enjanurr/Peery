@@ -18,12 +18,16 @@ public interface TeamMemberRepository extends JpaRepository<TeamMemberEntity, Lo
 
     Optional<TeamMemberEntity> findByTeamIdAndStudentId(Long teamId, Long studentId);
 
-    // NEW in Phase 3: a student's membership in a project (at most one per project)
     Optional<TeamMemberEntity> findByProjectIdAndStudentId(Long projectId, Long studentId);
 
     @Query("select m from TeamMemberEntity m join fetch m.student s "
             + "where m.projectId = :projectId order by s.fullName")
     List<TeamMemberEntity> findByProjectIdWithStudent(@Param("projectId") Long projectId);
+
+    // NEW in Phase 4: every member of a project with team and student loaded, grouped by team name
+    @Query("select m from TeamMemberEntity m join fetch m.student s join fetch m.team t "
+            + "where m.projectId = :projectId order by t.name, s.fullName")
+    List<TeamMemberEntity> findByProjectIdWithTeamAndStudent(@Param("projectId") Long projectId);
 
     @Query("select m from TeamMemberEntity m join fetch m.student s "
             + "where m.team.id = :teamId order by s.fullName")

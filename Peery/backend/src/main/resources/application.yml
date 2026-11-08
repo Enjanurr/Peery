@@ -35,3 +35,10 @@ app:
   instructor-invite-code: ${INSTRUCTOR_INVITE_CODE}
   cors:
     allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173}
+
+peery:
+  results:
+    min-responses: 2
+  frontend-url: http://localhost:5173     # used to build the reset link
+  password-reset:
+    ttl-minutes: 30

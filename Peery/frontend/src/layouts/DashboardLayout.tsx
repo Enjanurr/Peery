@@ -2,7 +2,7 @@ import { GraduationCap, LogOut } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth.ts';
-
+import { Link } from 'react-router-dom';
 interface DashboardLayoutProps {
   title: string;
   children: ReactNode;
@@ -40,8 +40,12 @@ export default function DashboardLayout({ title, children }: DashboardLayoutProp
               <LogOut className="h-4 w-4" />
               Log out
             </button>
+            <Link to="/profile" className="text-sm text-slate-300 hover:text-white">
+  Profile
+</Link>
           </div>
         </div>
+        
       </header>
 
       <main className="mx-auto max-w-5xl px-4 py-8">

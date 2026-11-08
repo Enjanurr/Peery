@@ -1,3 +1,4 @@
+
 import { GraduationCap, Loader2 } from 'lucide-react';
 import { useState, type ChangeEvent, type FormEvent } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
@@ -49,7 +50,7 @@ export default function Login() {
       <div className="w-full max-w-sm rounded-xl bg-slate-800 p-6 shadow-lg">
         <div className="mb-6 flex items-center gap-2">
           <GraduationCap className="h-6 w-6 text-indigo-400" />
-          <h1 className="text-xl font-semibold">Sign in to Peery</h1>
+          <h1 className="text-xl font-semibold ">Sign in to Peery</h1>
         </div>
 
         <form onSubmit={(e) => void handleSubmit(e)} className="space-y-4" noValidate>
@@ -71,6 +72,13 @@ export default function Login() {
             onChange={handleChange}
             required
           />
+
+        <div className="-mt-2 flex items-center justify-center gap-1 text-sm">
+          <h1>Forgot password?</h1>
+          <Link to="/forgot-password" className="text-indigo-400 hover:underline">
+            Click here
+          </Link>
+        </div>
 
           {error && (
             <p role="alert" className="rounded-lg bg-rose-500/10 px-3 py-2 text-sm text-rose-300">
