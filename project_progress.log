@@ -2,75 +2,58 @@ PEERY — CURRENT MASTER PROGRESS LOG
 ===================================
 
 Project: Peery — Peer Evaluation & Team Assessment Platform
-Updated: 2026-11-04 20:34 (+08:00)
-Overall accomplishment: approximately 50%
-Status: Phase 1 is complete. Phase 2 implementation is present, and Phase 3
-backend/frontend implementation is underway. Live integration verification
-remains outstanding; Phases 4 and 5 have not started.
+Updated: 2026-11-08 10:13 (+08:00)
 
-PERCENTAGE BASIS
-----------------
-Estimated equally weighted progress across the five roadmap phases:
-- Phase 1: 100% — marked complete; authentication test coverage was previously
-  recorded as Postman endpoints TC1–TC8.
-- Phase 2: 80% — project/team backend and frontend flows are present and builds
-  pass; live Phase 2 integration verification remains pending.
-- Phase 3: 70% — primary evaluation backend endpoints and student UI/API flows
-  are present; live integration verification and milestone sign-off remain.
-- Phase 4: 0% — not started.
-- Phase 5: 0% — not started.
-
-Average: (100% + 80% + 70% + 0% + 0%) / 5 = 50%.
-This is an implementation-progress estimate, not a claim that the README
-roadmap has been signed off; its current checkbox state is recorded below.
-
-COMPLETED / VERIFIED THIS UPDATE
--------------------------------
-- [x] Frontend production build (`npm run build`) passed.
-- [x] Backend test suite (`mvnw.cmd test`) passed: 5 tests, 0 failures,
-      0 errors, 0 skipped. The available test was JwtTokenProviderTest.
-- [x] Confirmed Phase 3 evaluation endpoint, service, migration, frontend API,
-      pages, and student-only routes are present in the workspace.
-
-IMPLEMENTATION STATUS
----------------------
-Phase 1 — Auth & roles
-- [x] Complete per README Section 14.
-- Previously recorded authentication checks: Postman endpoints TC1–TC8.
-
-Phase 2 — Projects & teams
-- [x] Instructor project CRUD and student roster backend endpoints are present.
-- [x] Team creation/deletion and member add/remove endpoints are present.
-- [x] Student project listing and frontend project/team screens and API are
-      present.
-- [ ] Run the Phase 2 live frontend API integration test against a configured,
-      running backend.
-- README Section 14 currently has `[]` for Phase 2 (unchecked).
-
-Phase 3 — Confidential Peer Evaluation Engine
-- [x] Core evaluation backend endpoint and service implementations are present:
-      window, criteria, pending list, own evaluations, get, create, and update.
-- [x] Core student frontend/API implementation is present: evaluation queue,
-      teammate form, rubric inputs, deadline state, and student-only routes.
-- [x] V3 evaluation schema migration is present.
-- [x] Run the Phase 3 live API integration test and verify end-to-end outcomes.
-- [x] Complete and sign off the README milestone and test checklists, including
-      validation, deadlines, duplicate handling, authorization, and anonymity.
-- README Section 14 and all five Nov 5 milestone boxes remain unchecked.
-
-Phases 4 and 5
-- [x] Phase 4: Score aggregation and anonymized StudentResultSummaryDTO.
-- [ ] Phase 5: Instructor attribution view and reason-required grade overrides.
-
-NEXT READY ACTION
------------------
-Run the Phase 3 live frontend API integration suite with a configured test
-invite code and a running backend; it covers the key evaluation flows,
-validation cases, stale versions, access controls, anonymity, and deadline
-locking. Then record the result and update the applicable checklist status.
-
-SCOPE / SAFETY
+ACCOMPLISHMENT
 --------------
-Only this log was replaced for this update. No application source code or
-README content was modified. Current roadmap checkbox state is based on
-README.md Section 14; implementation status above is based on workspace files.
+Feature implementation: 100% of the five roadmap phases are represented in
+the current workspace, with the additional profile and password-reset
+features implemented outside the roadmap.
+
+Release / verification status: NOT COMPLETE. Live integration and acceptance
+testing remain outstanding. The 100% figure refers to implementation
+availability, not test sign-off or production readiness.
+
+IMPLEMENTED PHASES
+------------------
+- [x] Phase 1 — Auth & roles: authentication and role-based access.
+- [x] Phase 2 — Projects & teams: instructor project/team management and
+      student project/team views.
+- [x] Phase 3 — Confidential Peer Evaluation Engine: evaluation window and
+      criteria, pending teammate list, create/read/update evaluation flows,
+      rubric form, deadlines, and anonymity-focused student APIs.
+- [x] Phase 4 — Score aggregation and anonymized student result summaries.
+- [x] Phase 5 — Instructor attribution, gradebook, grade overrides, and
+      override history/revocation.
+- [x] Additional — User profile viewing/updating and password changes.
+- [x] Additional — Forgot-password and reset-password flows.
+
+TESTING STATUS
+--------------
+- [x] Frontend production build (`npm run build`) passed on 2026-11-08.
+- [x] Backend unit tests (`mvnw.cmd test`) passed on 2026-11-08:
+      11 tests, 0 failures, 0 errors, 0 skipped.
+      Covered test classes: JwtTokenProviderTest (5) and
+      ScoreAggregatorTest (6).
+- [ ] Run the live Phase 2 project/team API integration suite.
+- [ ] Run the live Phase 3 evaluation API integration suite.
+- [ ] Run the live Phase 5 grade/override API integration suite.
+- [ ] Perform end-to-end/acceptance verification for profile and
+      password-reset flows; no dedicated profile/reset integration suite was
+      found during this status review.
+- [ ] Reconcile README.md Section 14 and phase test checklists after testing.
+
+NEXT ACTION
+-----------
+Run the integration suites against the configured, running backend, then
+verify account profile/password-reset behavior and update test/checklist
+status based on actual results.
+
+SOURCE / SCOPE NOTES
+--------------------
+- Implementation status reflects the current workspace files, including
+  backend controllers/services and frontend pages/API modules for all five
+  phases and the two additional account features.
+- README.md Section 14 is stale: it still marks Phase 2 unchecked and Phases
+  3–5 unchecked. This log does not change the README.
+- No application source code was modified for this log update.
